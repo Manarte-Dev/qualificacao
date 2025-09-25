@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Ficha Policial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Gerador de Ficha Policial</h2>
+
+    <label>Foto do Indivíduo:</label><br>
+    <input type="file" id="fotoInput" accept="image/*" capture="environment"><br><br>
+
+    <input type="text" id="nomeInput" placeholder="Nome"><br><br>
+    <input type="text" id="rgInput" placeholder="RG"><br><br>
+    <input type="text" id="enderecoInput" placeholder="Endereço"><br><br>
+    <input type="text" id="ocorrenciaInput" placeholder="Tipo de Ocorrência"><br><br>
+    <input type="text" id="dataInput" placeholder="Data"><br><br>
+    <button onclick="gerarFicha()">Gerar Ficha</button>
+
+    <div class="ficha" id="ficha">
+      <img id="foto" class="foto" src="">
+      <div id="nome" class="campo"></div>
+      <div id="rg" class="campo"></div>
+      <div id="endereco" class="campo"></div>
+      <div id="ocorrencia" class="campo"></div>
+      <div id="data" class="campo"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
