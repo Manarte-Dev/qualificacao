@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Ficha Policial</title>
+  <title>Ficha Policial PM</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
@@ -10,19 +10,20 @@
   <div class="container">
     <h2>Gerador de Ficha Policial</h2>
 
-    <label>Foto do Indivíduo:</label><br>
     <input type="file" id="fotoInput" accept="image/*"><br><br>
 
-    <input type="text" id="nomeInput" placeholder="Nome"><br><br>
-    <input type="text" id="rgInput" placeholder="RG"><br><br>
-    <input type="text" id="enderecoInput" placeholder="Endereço do preso"><br><br>
-    <input type="text" id="ocorrenciaInput" placeholder="Tipo de Ocorrência"><br><br>
-    <input type="text" id="dataInput" placeholder="Data"><br><br>
-    <input type="text" id="localOcorrenciaInput" placeholder="Endereço da Ocorrência"><br><br>
-    <input type="text" id="distritoInput" placeholder="Distrito Policial"><br><br>
-    <input type="text" id="equipeInput" placeholder="Equipe"><br><br>
-    <input type="text" id="bopmInput" placeholder="BOPM"><br><br>
-    <input type="text" id="bopcInput" placeholder="BOPC"><br><br>
+    <input type="text" id="nomeInput" placeholder="Nome"><br>
+    <input type="text" id="vulgoInput" placeholder="Vulgo"><br>
+    <input type="text" id="ocorrenciaInput" placeholder="Tipo da Ocorrência"><br>
+    <input type="text" id="enderecoFlagranteInput" placeholder="Endereço do Flagrante"><br>
+    <input type="text" id="enderecoPresoInput" placeholder="Endereço do Preso"><br>
+    <input type="text" id="rgInput" placeholder="RG"><br>
+    <input type="text" id="dataInput" placeholder="Data da Ocorrência"><br>
+    <input type="text" id="dpInput" placeholder="DP"><br>
+    <input type="text" id="bopcInput" placeholder="BOPC"><br>
+    <input type="text" id="bopmInput" placeholder="BOPM"><br>
+    <input type="text" id="equipeInput" placeholder="Equipe"><br>
+    <input type="text" id="pelInput" placeholder="PEL"><br>
     <input type="text" id="abordagemInput" placeholder="Abordagem ou Flagrante"><br><br>
 
     <button onclick="gerarFicha()">Gerar Ficha</button>
@@ -31,15 +32,17 @@
     <div class="ficha" id="ficha">
       <img id="foto" class="foto" src="">
       <div id="nome" class="campo"></div>
-      <div id="rg" class="campo"></div>
-      <div id="endereco" class="campo"></div>
+      <div id="vulgo" class="campo"></div>
       <div id="ocorrencia" class="campo"></div>
+      <div id="enderecoFlagrante" class="campo"></div>
+      <div id="enderecoPreso" class="campo"></div>
+      <div id="rg" class="campo"></div>
       <div id="data" class="campo"></div>
-      <div id="localOcorrencia" class="campo"></div>
-      <div id="distrito" class="campo"></div>
-      <div id="equipe" class="campo"></div>
-      <div id="bopm" class="campo"></div>
+      <div id="dp" class="campo"></div>
       <div id="bopc" class="campo"></div>
+      <div id="bopm" class="campo"></div>
+      <div id="equipe" class="campo"></div>
+      <div id="pel" class="campo"></div>
       <div id="abordagem" class="campo"></div>
     </div>
   </div>

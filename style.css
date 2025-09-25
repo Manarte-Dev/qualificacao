@@ -7,7 +7,7 @@ body {
 .container {
   max-width: 600px;
   margin: auto;
-  background: rgb(150, 149, 149);
+  background: white;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -15,10 +15,10 @@ body {
 .ficha {
   position: relative;
   width: 100%;
-  height: 600px;
-  background: url('placa-branca.jpg') no-repeat center center;
+  height: 700px;
+  background: url('ficha-pm.jpg') no-repeat center center;
   background-size: cover;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .foto {
@@ -27,8 +27,8 @@ body {
   left: 20px;
   width: 150px;
   height: 200px;
-  background: #ccc;
   object-fit: cover;
+  background: #ccc;
 }
 
 .campo {
@@ -38,26 +38,25 @@ body {
   color: black;
 }
 
-#nome { top: 240px; left: 20px; }
-#rg { top: 260px; left: 20px; }
-#endereco { top: 280px; left: 20px; }
-#ocorrencia { top: 300px; left: 20px; }
-#data { top: 320px; left: 20px; }
-#localOcorrencia { top: 340px; left: 20px; }
-#distrito { top: 360px; left: 20px; }
-#equipe { top: 380px; left: 20px; }
-#bopm { top: 400px; left: 20px; }
-#bopc { top: 420px; left: 20px; }
-#abordagem { top: 440px; left: 20px; }
+/* Posicionamento estimado — ajuste conforme a imagem */
+#nome { top: 240px; left: 200px; }
+#vulgo { top: 260px; left: 200px; }
+#ocorrencia { top: 280px; left: 200px; }
+#enderecoFlagrante { top: 300px; left: 200px; }
+#enderecoPreso { top: 320px; left: 200px; }
+#rg { top: 340px; left: 200px; }
+#data { top: 360px; left: 200px; }
+#dp { top: 380px; left: 200px; }
+#bopc { top: 400px; left: 200px; }
+#bopm { top: 420px; left: 200px; }
+#equipe { top: 440px; left: 200px; }
+#pel { top: 460px; left: 200px; }
+#abordagem { top: 480px; left: 200px; }
 
-/* 📱 Ajustes para telas menores */
+/* Responsivo para celular */
 @media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-
   .ficha {
-    height: 500px;
+    height: 600px;
     background-size: contain;
   }
 
@@ -72,15 +71,18 @@ body {
     font-size: 12px;
   }
 
-  #nome { top: 180px; left: 10px; }
-  #rg { top: 195px; left: 10px; }
-  #endereco { top: 210px; left: 10px; }
-  #ocorrencia { top: 225px; left: 10px; }
-  #data { top: 240px; left: 10px; }
-  #localOcorrencia { top: 255px; left: 10px; }
-  #distrito { top: 270px; left: 10px; }
-  #equipe { top: 285px; left: 10px; }
-  #bopm { top: 300px; left: 10px; }
-  #bopc { top: 315px; left: 10px; }
-  #abordagem { top: 330px; left: 10px; }
+  /* Ajuste proporcional dos campos */
+  #nome { top: 180px; left: 140px; }
+  #vulgo { top: 195px; left: 140px; }
+  #ocorrencia { top: 210px; left: 140px; }
+  #enderecoFlagrante { top: 225px; left: 140px; }
+  #enderecoPreso { top: 240px; left: 140px; }
+  #rg { top: 255px; left: 140px; }
+  #data { top: 270px; left: 140px; }
+  #dp { top: 285px; left: 140px; }
+  #bopc { top: 300px; left: 140px; }
+  #bopm { top: 315px; left: 140px; }
+  #equipe { top: 330px; left: 140px; }
+  #pel { top: 345px; left: 140px; }
+  #abordagem { top: 360px; left: 140px; }
 }

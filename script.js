@@ -11,17 +11,19 @@ function gerarFicha() {
     reader.readAsDataURL(fotoInput.files[0]);
   }
 
-  document.getElementById('nome').textContent = 'Nome: ' + document.getElementById('nomeInput').value;
+  document.getElementById('nome').textContent = 'NOME: ' + document.getElementById('nomeInput').value;
+  document.getElementById('vulgo').textContent = 'VULGO: ' + document.getElementById('vulgoInput').value;
+  document.getElementById('ocorrencia').textContent = 'TIPO DA OCORRÊNCIA: ' + document.getElementById('ocorrenciaInput').value;
+  document.getElementById('enderecoFlagrante').textContent = 'ENDEREÇO DO FLAGRANTE: ' + document.getElementById('enderecoFlagranteInput').value;
+  document.getElementById('enderecoPreso').textContent = 'ENDEREÇO DO PRESO: ' + document.getElementById('enderecoPresoInput').value;
   document.getElementById('rg').textContent = 'RG: ' + document.getElementById('rgInput').value;
-  document.getElementById('endereco').textContent = 'Endereço do preso: ' + document.getElementById('enderecoInput').value;
-  document.getElementById('ocorrencia').textContent = 'Tipo de Ocorrência: ' + document.getElementById('ocorrenciaInput').value;
-  document.getElementById('data').textContent = 'Data: ' + document.getElementById('dataInput').value;
-  document.getElementById('localOcorrencia').textContent = 'Endereço da Ocorrência: ' + document.getElementById('localOcorrenciaInput').value;
-  document.getElementById('distrito').textContent = 'Distrito Policial: ' + document.getElementById('distritoInput').value;
-  document.getElementById('equipe').textContent = 'Equipe: ' + document.getElementById('equipeInput').value;
-  document.getElementById('bopm').textContent = 'BOPM: ' + document.getElementById('bopmInput').value;
+  document.getElementById('data').textContent = 'DATA DA OCORRÊNCIA: ' + document.getElementById('dataInput').value;
+  document.getElementById('dp').textContent = 'DP: ' + document.getElementById('dpInput').value;
   document.getElementById('bopc').textContent = 'BOPC: ' + document.getElementById('bopcInput').value;
-  document.getElementById('abordagem').textContent = 'Abordagem ou Flagrante: ' + document.getElementById('abordagemInput').value;
+  document.getElementById('bopm').textContent = 'BOPM: ' + document.getElementById('bopmInput').value;
+  document.getElementById('equipe').textContent = 'EQUIPE: ' + document.getElementById('equipeInput').value;
+  document.getElementById('pel').textContent = 'PEL: ' + document.getElementById('pelInput').value;
+  document.getElementById('abordagem').textContent = 'ABORDAGEM OU FLAGRANTE: ' + document.getElementById('abordagemInput').value;
 }
 
 function baixarFicha() {
@@ -29,7 +31,7 @@ function baixarFicha() {
   html2canvas(ficha).then(canvas => {
     const link = document.createElement('a');
     link.download = 'ficha-policial.png';
-    link.href = canvas.toDataURL();
+    link.href = canvas.toDataURL('image/png');
     link.click();
   });
 }
