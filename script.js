@@ -16,7 +16,14 @@ function gerarFicha() {
   document.getElementById('endereco').textContent = document.getElementById('enderecoInput').value;
   document.getElementById('ocorrencia').textContent = document.getElementById('ocorrenciaInput').value;
   document.getElementById('data').textContent = document.getElementById('dataInput').value;
+  document.getElementById('localOcorrencia').textContent = document.getElementById('localOcorrenciaInput').value;
+  document.getElementById('distrito').textContent = document.getElementById('distritoInput').value;
+  document.getElementById('equipe').textContent = document.getElementById('equipeInput').value;
+  document.getElementById('bopm').textContent = document.getElementById('bopmInput').value;
+  document.getElementById('bopc').textContent = document.getElementById('bopcInput').value;
+  document.getElementById('abordagem').textContent = document.getElementById('abordagemInput').value;
 }
+
 function baixarFicha() {
   const ficha = document.getElementById('ficha');
   html2canvas(ficha).then(canvas => {
