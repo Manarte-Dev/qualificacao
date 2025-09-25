@@ -15,74 +15,62 @@ body {
 .ficha {
   position: relative;
   width: 100%;
-  height: 700px;
-  background: url('ficha-pm.jpg') no-repeat center center;
-  background-size: cover;
-  margin-top: 20px;
+  max-width: 600px;
+  height: 800px;
+  margin: 20px auto;
+  overflow: hidden;
 }
 
-.foto {
+.fundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.brasao {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 150px;
-  height: 200px;
-  object-fit: cover;
-  background: #ccc;
+  width: 80px;
+  height: auto;
+  z-index: 2;
 }
 
 .campo {
   position: absolute;
+  z-index: 1;
+  font-family: 'Arial Narrow', Arial, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  color: black;
+  color: white;
+  text-shadow: 1px 1px 2px black;
 }
 
-/* Posicionamento estimado — ajuste conforme a imagem */
-#nome { top: 240px; left: 200px; }
-#vulgo { top: 260px; left: 200px; }
-#ocorrencia { top: 280px; left: 200px; }
-#enderecoFlagrante { top: 300px; left: 200px; }
-#enderecoPreso { top: 320px; left: 200px; }
-#rg { top: 340px; left: 200px; }
-#data { top: 360px; left: 200px; }
-#dp { top: 380px; left: 200px; }
-#bopc { top: 400px; left: 200px; }
-#bopm { top: 420px; left: 200px; }
-#equipe { top: 440px; left: 200px; }
-#pel { top: 460px; left: 200px; }
-#abordagem { top: 480px; left: 200px; }
-
-/* Responsivo para celular */
-@media (max-width: 480px) {
-  .ficha {
-    height: 600px;
-    background-size: contain;
-  }
-
-  .foto {
-    width: 120px;
-    height: 160px;
-    top: 10px;
-    left: 10px;
-  }
-
-  .campo {
-    font-size: 12px;
-  }
-
-  /* Ajuste proporcional dos campos */
-  #nome { top: 180px; left: 140px; }
-  #vulgo { top: 195px; left: 140px; }
-  #ocorrencia { top: 210px; left: 140px; }
-  #enderecoFlagrante { top: 225px; left: 140px; }
-  #enderecoPreso { top: 240px; left: 140px; }
-  #rg { top: 255px; left: 140px; }
-  #data { top: 270px; left: 140px; }
-  #dp { top: 285px; left: 140px; }
-  #bopc { top: 300px; left: 140px; }
-  #bopm { top: 315px; left: 140px; }
-  #equipe { top: 330px; left: 140px; }
-  #pel { top: 345px; left: 140px; }
-  #abordagem { top: 360px; left: 140px; }
+/* Campos posicionados com base na ficha */
+#nome { top: 60px; left: 40px; width: 400px; }
+#mae { top: 90px; left: 40px; width: 400px; }
+#pai { top: 120px; left: 40px; width: 400px; }
+#nascimento { top: 150px; left: 40px; width: 400px; }
+#rg { top: 180px; left: 40px; width: 400px; }
+#cpf { top: 210px; left: 40px; width: 400px; }
+#naturalidade { top: 240px; left: 40px; width: 400px; }
+#nacionalidade { top: 270px; left: 40px; width: 400px; }
+#endereco { top: 300px; left: 40px; width: 400px; }
+#bairro { top: 330px; left: 40px; width: 400px; }
+#cidade { top: 360px; left: 40px; width: 400px; }
+#estado { top: 390px; left: 40px; width: 400px; }
+#assinatura { top: 700px; left: 40px; width: 400px; text-align: center; }
+.brasao {
+  position: absolute;
+  top: 20px;
+  right: 20px;               /* Alinhado à direita */
+  width: 120px;              /* Tamanho aumentado */
+  height: auto;
+  z-index: 2;
+  opacity: 0.85;             /* Leve transparência estilo carimbo */
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); /* Sombra suave */
 }

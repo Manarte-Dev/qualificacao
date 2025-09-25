@@ -11,27 +11,32 @@ function gerarFicha() {
     reader.readAsDataURL(fotoInput.files[0]);
   }
 
-  document.getElementById('nome').textContent = 'NOME: ' + document.getElementById('nomeInput').value;
-  document.getElementById('vulgo').textContent = 'VULGO: ' + document.getElementById('vulgoInput').value;
-  document.getElementById('ocorrencia').textContent = 'TIPO DA OCORRÊNCIA: ' + document.getElementById('ocorrenciaInput').value;
-  document.getElementById('enderecoFlagrante').textContent = 'ENDEREÇO DO FLAGRANTE: ' + document.getElementById('enderecoFlagranteInput').value;
-  document.getElementById('enderecoPreso').textContent = 'ENDEREÇO DO PRESO: ' + document.getElementById('enderecoPresoInput').value;
+  document.getElementById('nome').textContent = 'NOME COMPLETO: ' + document.getElementById('nomeInput').value;
+  document.getElementById('mae').textContent = 'NOME DA MÃE: ' + document.getElementById('maeInput').value;
+  document.getElementById('pai').textContent = 'NOME DO PAI: ' + document.getElementById('paiInput').value;
+  document.getElementById('nascimento').textContent = 'DATA DE NASCIMENTO: ' + document.getElementById('nascimentoInput').value;
   document.getElementById('rg').textContent = 'RG: ' + document.getElementById('rgInput').value;
-  document.getElementById('data').textContent = 'DATA DA OCORRÊNCIA: ' + document.getElementById('dataInput').value;
-  document.getElementById('dp').textContent = 'DP: ' + document.getElementById('dpInput').value;
-  document.getElementById('bopc').textContent = 'BOPC: ' + document.getElementById('bopcInput').value;
-  document.getElementById('bopm').textContent = 'BOPM: ' + document.getElementById('bopmInput').value;
-  document.getElementById('equipe').textContent = 'EQUIPE: ' + document.getElementById('equipeInput').value;
-  document.getElementById('pel').textContent = 'PEL: ' + document.getElementById('pelInput').value;
-  document.getElementById('abordagem').textContent = 'ABORDAGEM OU FLAGRANTE: ' + document.getElementById('abordagemInput').value;
+  document.getElementById('cpf').textContent = 'CPF: ' + document.getElementById('cpfInput').value;
+  document.getElementById('naturalidade').textContent = 'NATURALIDADE: ' + document.getElementById('naturalidadeInput').value;
+  document.getElementById('nacionalidade').textContent = 'NACIONALIDADE: ' + document.getElementById('nacionalidadeInput').value;
+  document.getElementById('endereco').textContent = 'ENDEREÇO: ' + document.getElementById('enderecoInput').value;
+  document.getElementById('bairro').textContent = 'BAIRRO: ' + document.getElementById('bairroInput').value;
+  document.getElementById('cidade').textContent = 'CIDADE: ' + document.getElementById('cidadeInput').value;
+  document.getElementById('estado').textContent = 'ESTADO: ' + document.getElementById('estadoInput').value;
 }
 
 function baixarFicha() {
   const ficha = document.getElementById('ficha');
+  const botoes = document.querySelectorAll('button');
+
+  botoes.forEach(btn => btn.style.display = 'none');
+
   html2canvas(ficha).then(canvas => {
     const link = document.createElement('a');
-    link.download = 'ficha-policial.png';
+    link.download = 'ficha-qualificacao.png';
     link.href = canvas.toDataURL('image/png');
     link.click();
+
+    botoes.forEach(btn => btn.style.display = 'inline-block');
   });
 }
