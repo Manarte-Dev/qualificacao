@@ -7,7 +7,7 @@ body {
 .container {
   width: 600px;
   margin: auto;
-  background: white;
+  background: rgb(175, 174, 174);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
