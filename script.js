@@ -17,3 +17,12 @@ function gerarFicha() {
   document.getElementById('ocorrencia').textContent = document.getElementById('ocorrenciaInput').value;
   document.getElementById('data').textContent = document.getElementById('dataInput').value;
 }
+function baixarFicha() {
+  const ficha = document.getElementById('ficha');
+  html2canvas(ficha).then(canvas => {
+    const link = document.createElement('a');
+    link.download = 'ficha-policial.png';
+    link.href = canvas.toDataURL();
+    link.click();
+  });
+}
