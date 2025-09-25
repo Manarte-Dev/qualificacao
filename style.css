@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  width: 600px;
+  max-width: 600px;
   margin: auto;
   background: white;
   padding: 20px;
@@ -49,3 +49,38 @@ body {
 #bopm { top: 400px; left: 20px; }
 #bopc { top: 420px; left: 20px; }
 #abordagem { top: 440px; left: 20px; }
+
+/* 📱 Ajustes para telas menores */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .ficha {
+    height: 500px;
+    background-size: contain;
+  }
+
+  .foto {
+    width: 120px;
+    height: 160px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .campo {
+    font-size: 12px;
+  }
+
+  #nome { top: 180px; left: 10px; }
+  #rg { top: 195px; left: 10px; }
+  #endereco { top: 210px; left: 10px; }
+  #ocorrencia { top: 225px; left: 10px; }
+  #data { top: 240px; left: 10px; }
+  #localOcorrencia { top: 255px; left: 10px; }
+  #distrito { top: 270px; left: 10px; }
+  #equipe { top: 285px; left: 10px; }
+  #bopm { top: 300px; left: 10px; }
+  #bopc { top: 315px; left: 10px; }
+  #abordagem { top: 330px; left: 10px; }
+}
