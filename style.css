@@ -1,13 +1,14 @@
 body {
   font-family: Arial, sans-serif;
-  background: #f2f2f2;
+  background: #cfcdcd;
   padding: 20px;
 }
 
 .container {
+  text-align: center;
   max-width: 600px;
   margin: auto;
-  background: white;
+  background: rgb(77, 76, 76);
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -15,8 +16,8 @@ body {
 .ficha {
   position: relative;
   width: 100%;
-  max-width: 600px;
-  height: 800px;
+  max-width: 300px;
+  height: 400px;
   margin: 20px auto;
   overflow: hidden;
 }
@@ -33,44 +34,62 @@ body {
 
 .brasao {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 80px;
+  top: 185px;
+  right: 60px;
+  width: 75px;
   height: auto;
   z-index: 2;
+  opacity: 0.85;
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.363));
 }
 
 .campo {
   position: absolute;
   z-index: 1;
   font-family: 'Arial Narrow', Arial, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
   color: white;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0);
+  width: 260px;
+  left: 20px;
+  text-align: left;
 }
 
-/* Campos posicionados com base na ficha */
-#nome { top: 60px; left: 40px; width: 400px; }
-#mae { top: 90px; left: 40px; width: 400px; }
-#pai { top: 120px; left: 40px; width: 400px; }
-#nascimento { top: 150px; left: 40px; width: 400px; }
-#rg { top: 180px; left: 40px; width: 400px; }
-#cpf { top: 210px; left: 40px; width: 400px; }
-#naturalidade { top: 240px; left: 40px; width: 400px; }
-#nacionalidade { top: 270px; left: 40px; width: 400px; }
-#endereco { top: 300px; left: 40px; width: 400px; }
-#bairro { top: 330px; left: 40px; width: 400px; }
-#cidade { top: 360px; left: 40px; width: 400px; }
-#estado { top: 390px; left: 40px; width: 400px; }
-#assinatura { top: 700px; left: 40px; width: 400px; text-align: center; }
-.brasao {
+/* Campos posicionados */
+#nome { top: 95px; }
+#nascimento { top: 105px; }
+#naturalidade { top: 115px; }
+#rg { top: 125px; }
+#local { top: 135px; }
+#endereco { top: 145px; }
+#distrito { top: 155px; }
+#equipe { top: 165px; }
+#bopm { top: 175px; }
+#bopc { top: 185px; }
+#flagrante { top: 195px; }
+
+.campo {
   position: absolute;
-  top: 20px;
-  right: 20px;               /* Alinhado à direita */
-  width: 120px;              /* Tamanho aumentado */
-  height: auto;
-  z-index: 2;
-  opacity: 0.85;             /* Leve transparência estilo carimbo */
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.5)); /* Sombra suave */
+  z-index: 1;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-size: 6px;
+  font-weight: bold;
+  color: black;
+  background-color: rgba(255, 255, 255, 0);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+  width: 180px;
+  left: 20px;
+  text-align: left;
+}
+
+.campo1 {
+  position: absolute;
+  top: 170px;               
+  left: 40px;              
+  width: 220px;            
+  height: 220px;           
+  background-color: rgba(255, 255, 255, 0.527);
+  border-radius: 8px;
+  z-index: 0;             
 }
