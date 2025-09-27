@@ -47,7 +47,7 @@ function baixarFicha() {
 const opcoes = {
   useCORS: true,
   backgroundColor: '#ffffff',
-  scale: 5,
+  scale: 3,
 };
 
 
