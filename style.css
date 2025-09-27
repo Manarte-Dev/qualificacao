@@ -70,7 +70,7 @@ body {
   width: 100%;       /* ocupa a largura da ficha */
   height: 100%;      /* altura toda */
   object-fit: contain; /* mantém a proporção da imagem original */
-  background: #000;     /* fundo preto para áreas vazias */
+  background: #fffefe00;     /* fundo preto para áreas vazias */
   z-index: 0;
 }
 
@@ -92,7 +92,7 @@ body {
   width: 260px;
   height: 230px;
   padding: 55px 5px 10px 10px;
-  background-color: rgba(255, 255, 255, 0.616);
+  background-color: rgba(255, 255, 255, 0.548);
   border-radius: 8px;
   box-sizing: border-box;
   z-index: 2;
