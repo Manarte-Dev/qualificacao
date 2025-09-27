@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ficha de Qualificação</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
@@ -10,43 +11,51 @@
   <div class="container">
     <h2>Ficha de Qualificação</h2>
 
-    <input type="file" id="fotoInput" accept="image/*"><br><br>
+    <input type="file" id="fotoInput" accept="image/*" placeholder="Selecionar foto"><br>
 
     <input type="text" id="nomeInput" placeholder="Nome completo"><br>
     <input type="text" id="nascimentoInput" placeholder="Data de nascimento"><br>
-    <input type="text" id="naturalidadeInput" placeholder="Naturalidade"><br>
+    <input type="text" id="naturalidadeInput" placeholder="Naturalidade "><br>
     <input type="text" id="rgInput" placeholder="RG"><br>
     <input type="text" id="localInput" placeholder="Endereço do Fato"><br>
     <input type="text" id="enderecoInput" placeholder="Endereço do Preso"><br>
     <input type="text" id="distritoInput" placeholder="Distrito Policial"><br>
     <input type="text" id="equipeInput" placeholder="Equipe"><br>
-    <input type="text" id="bopmInput" placeholder="BOPM"><br>
-    <input type="text" id="bopcInput" placeholder="BOPC"><br>
-    <input type="text" id="flagranteInput" placeholder="Flagrante ou Abordagem"><br><br>
+    <input type="text" id="bopmInput" placeholder="BOPM Nº"><br>
+    <input type="text" id="bopcInput" placeholder="BOPC Nº"><br>
+    <input type="text" id="flagranteInput" placeholder="Flagrante ou Abordagem"><br>
 
-    <button onclick="gerarFicha()">Gerar / Atualizar Ficha</button>
+    <button onclick="gerarFicha()"> Gerar / Atualizar Ficha</button>
     <button onclick="baixarFicha()" id="btnBaixar">Baixar Ficha</button>
     <button onclick="limparFormulario()">Limpar</button>
 
-    <div id="loading" style="display:none;">Gerando download...</div>
+    <div id="loading">⏳ Gerando download...</div>
   </div>
 
   <div class="ficha" id="ficha">
-    <img id="foto" class="fundo" src="" alt="">
+    <img id="foto" src="" alt="Foto do indivíduo">
+    
     <img src="brasao-pmep.png" class="brasao" alt="Brasão PMESP">
 
     <div class="campo1">
-      <div id="nome" class="campo">NOME COMPLETO: </div>
-      <div id="nascimento" class="campo">DATA DE NASCIMENTO: </div>
-      <div id="naturalidade" class="campo">NATURAL DE: </div>
-      <div id="rg" class="campo">RG: </div>
-      <div id="local" class="campo">ENDEREÇO DOS FATOS: </div>
-      <div id="endereco" class="campo">ENDEREÇO DO PRESO: </div>
-      <div id="distrito" class="campo">DISTRITO: </div>
-      <div id="equipe" class="campo">EQUIPE: </div>
-      <div id="bopm" class="campo">BOPM Nº: </div>
-      <div id="bopc" class="campo">BOPC Nº: </div>
-      <div id="flagrante" class="campo">FLAGRANTE / ABORDAGEM: </div>
+      <div id="nome" class="campo">NOME COMPLETO:</div>
+      <div id="nascimento" class="campo">DATA DE NASCIMENTO:</div>
+      <div id="naturalidade" class="campo">NATURAL DE:</div>
+      <div id="rg" class="campo">RG:</div>
+      <div id="local" class="campo">ENDEREÇO DOS FATOS:</div>
+      <div id="endereco" class="campo">ENDEREÇO DO PRESO:</div>
+      
+      <div class="linha-dupla">
+        <div id="distrito" class="campo">DISTRITO:</div>
+        <div id="equipe" class="campo">EQUIPE:</div>
+      </div>
+      
+      <div class="linha-dupla">
+        <div id="bopm" class="campo">BOPM Nº:</div>
+        <div id="bopc" class="campo">BOPC Nº:</div>
+      </div>
+      
+      <div id="flagrante" class="campo">FLAGRANTE / ABORDAGEM:</div>
     </div>
   </div>
 
