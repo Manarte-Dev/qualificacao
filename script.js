@@ -41,29 +41,67 @@ function baixarFicha() {
   
   loading.style.display = 'block';
   btnBaixar.disabled = true;
-  btnBaixar.textContent = 'Gerando...';
+  
+  // Detectar iOS para texto do botão
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  btnBaixar.textContent = isIOS ? 'Gerando...' : 'Gerando...';
 
   setTimeout(() => {
-const opcoes = {
-  useCORS: true,
-  backgroundColor: '#ffffff',
-  scale: 3,
-};
-
+    const opcoes = {
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      scale: 3,
+    };
 
     console.log('Configurações html2canvas:', opcoes);
 
     html2canvas(ficha, opcoes)
       .then(canvas => {
         console.log('Canvas gerado:', canvas.width + 'x' + canvas.height);
-        const dataURL = canvas.toDataURL('image/png', 1.0);
-        const link = document.createElement('a');
-        link.href = dataURL;
-        link.download = getNomeArquivo() + '.png';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        console.log('Download iniciado com sucesso!');
+        
+        // Converter canvas para blob
+        canvas.toBlob(blob => {
+          const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+          
+          // SOLUÇÃO PARA iOS - Share API
+          if (isIOS && navigator.share) {
+            console.log('Usando Share API para iOS');
+            const file = new File([blob], getNomeArquivo() + '.png', { 
+              type: 'image/png' 
+            });
+            
+            navigator.share({
+              files: [file],
+              title: 'Ficha de Qualificação',
+              text: 'Ficha gerada pelo sistema'
+            })
+            .then(() => {
+              console.log('Compartilhado com sucesso no iOS!');
+            })
+            .catch(err => {
+              // Usuário cancelou ou erro
+              if (err.name !== 'AbortError') {
+                console.error('Erro ao compartilhar:', err);
+                alert('Erro ao compartilhar: ' + err.message);
+              } else {
+                console.log('Compartilhamento cancelado pelo usuário');
+              }
+            });
+          } 
+          // MANTÉM O COMPORTAMENTO ORIGINAL PARA OUTROS DISPOSITIVOS
+          else {
+            console.log('Usando download tradicional');
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = getNomeArquivo() + '.png';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+            console.log('Download iniciado com sucesso!');
+          }
+        }, 'image/png', 1.0);
       })
       .catch(error => {
         console.error('Erro html2canvas:', error);
@@ -72,7 +110,8 @@ const opcoes = {
       .finally(() => {
         loading.style.display = 'none';
         btnBaixar.disabled = false;
-        btnBaixar.textContent = 'Baixar Ficha';
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        btnBaixar.textContent = isIOS && navigator.share ? 'Compartilhar Ficha' : 'Baixar Ficha';
       });
   }, 500);
 }
@@ -106,6 +145,16 @@ document.addEventListener('keypress', e => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Ajustar texto do botão conforme dispositivo
+  const btnBaixar = document.getElementById('btnBaixar');
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+  
+  if (btnBaixar && isIOS && navigator.share) {
+    btnBaixar.textContent = 'Compartilhar Ficha';
+    console.log('Dispositivo iOS detectado - usando Share API');
+  }
+
+  // Validação de foto
   const fotoInput = document.getElementById('fotoInput');
   if (fotoInput) {
     fotoInput.addEventListener('change', e => {
