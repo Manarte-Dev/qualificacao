@@ -97,7 +97,11 @@ body {
   margin: 20px auto;
   overflow: hidden;
   border: 2px solid #333;
-  background-color: #fff;
+  background-color: #50505093;
+}
+#qpae {
+  text-align: center;
+  font-size: ;
 }
 
 /* === FOTO === */
@@ -114,7 +118,7 @@ body {
 
 .brasao {
   position: absolute;
-  bottom: 111px; 
+  bottom: 100px; 
   right: 23px;
   width: 35px;
   height: auto;
@@ -128,7 +132,7 @@ body {
   bottom: 2px;
   left: 20px;
   width: 260px;
-  height: 140px;
+  height: 130px;
   padding: 16px 10px 15px 10px;
   background-color: rgba(255, 255, 255, 0.548);
   border-radius: 8px;
@@ -227,14 +231,14 @@ body {
   
   .campo1 {
     width: 260px;
-    height: 140px;
+    height: 130px;
     bottom: 2px;
     left: 10px;
   }
   
   .brasao {
     width: 35px;
-    bottom: 111px;
+    bottom: 100px;
     right: 14px;
   }
 }
