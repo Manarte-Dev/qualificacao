@@ -114,8 +114,8 @@ body {
 
 .brasao {
   position: absolute;
-  bottom: 150px; 
-  right: 45px;
+  bottom: 111px; 
+  right: 23px;
   width: 35px;
   height: auto;
   opacity: 0.95;
@@ -125,11 +125,11 @@ body {
 
 .campo1 {
   position: absolute;
-  bottom: 10px;
-  left: 35px;
-  width: 230px;
-  height: 172px;
-  padding: 30px 10px 15px 10px;
+  bottom: 2px;
+  left: 20px;
+  width: 260px;
+  height: 140px;
+  padding: 16px 10px 15px 10px;
   background-color: rgba(255, 255, 255, 0.548);
   border-radius: 8px;
   box-sizing: border-box;
@@ -139,7 +139,7 @@ body {
 
 .campo {
   font-family: 'Arial', sans-serif;
-  font-size: 8px;
+  font-size: 5px;
   font-weight: bold;
   color: #000;
   margin: 3px 0;
@@ -154,15 +154,15 @@ body {
 
 #nome {
   margin-top: 0px;
-  font-size: 8px;
+  font-size: 5px;
 }
 
-#nascimento, #naturalidade, #rg {
-  font-size: 8px;
+#nascimento {
+  font-size: 5px;
 }
 
 #local, #endereco {
-  font-size: 8px;
+  font-size: 5px;
   word-break: break-all;
 }
 
@@ -173,8 +173,24 @@ body {
   margin: 3px 0;
 }
 
+#rg, #naturalidade {
+  font-size: 5px;
+  width: 48%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding-bottom: 2px;
+  margin: 0;
+}
+
+#vulgo, #codigodeocorrencia {
+  font-size: 5px;
+  width: 48%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding-bottom: 2px;
+  margin: 0;
+}
+
 #distrito, #equipe {
-  font-size: 8px;
+  font-size: 5px;
   width: 48%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   padding-bottom: 2px;
@@ -182,7 +198,7 @@ body {
 }
 
 #bopm, #bopc {
-  font-size: 8px;
+  font-size: 5px;
   width: 48%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
   padding-bottom: 2px;
@@ -190,7 +206,7 @@ body {
 }
 
 #flagrante {
-  font-size: 8px;
+  font-size: 5px;
   margin-bottom: 0;
 }
 
@@ -210,16 +226,16 @@ body {
   }
   
   .campo1 {
-    width: 230px;
-    height: 190px;
-    bottom: 10px;
-    left: 25px;
+    width: 260px;
+    height: 140px;
+    bottom: 2px;
+    left: 10px;
   }
   
   .brasao {
     width: 35px;
-    bottom: 168px;
-    right: 40px;
+    bottom: 111px;
+    right: 14px;
   }
 }
 
