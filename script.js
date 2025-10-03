@@ -68,7 +68,7 @@ function baixarFicha() {
         canvas.toBlob(blob => {
           const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
           
-          // SOLUÇÃO PARA iOS - Share API
+          // SOLUÇÃO PARA iOS 
           if (isIOS && navigator.share) {
             console.log('Usando Share API para iOS');
             const file = new File([blob], getNomeArquivo() + '.png', { 
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
   
   if (btnBaixar && isIOS && navigator.share) {
-    btnBaixar.textContent = 'Compartilhar Ficha';
+    btnBaixar.textContent = 'Compartilhar';
     console.log('Dispositivo iOS detectado - usando Share API');
   }
 
