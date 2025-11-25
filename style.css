@@ -16,9 +16,9 @@ body {
   color: white;
 }
 .botaoFotoLabel {
-  background-color: #000000fd;
+  background-color: #0026ff;
   height: 50px;
-  font-size: 0.9em;
+  font-size: 1.1em;
   color: white;
   
   display: flex;
@@ -102,6 +102,7 @@ body {
 #qpae {
   text-align: center;
   font-size: ;
+  padding: 50px;
 }
 
 /* === FOTO === */

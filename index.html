@@ -10,12 +10,12 @@
 <body>
   <div class="container">
     <h2>Ficha de Qualificação</h2>
-    <label for="fotoInput" class="botaoFotoLabel">📷 Selecionar Foto</label>
+    <label for="fotoInput" class="botaoFotoLabel">📷 Toque para carregar foto</label>
     <input type="file" id="fotoInput" accept="image/*" style="display: none;"><br>
     <input type="text" id="nomeInput" placeholder="Nome completo"><br>
     <input type="text" id="nascimentoInput" placeholder="Data de nascimento"><br>
     <input type="text" id="naturalidadeInput" placeholder="Naturalidade "><br>
-    <input type="text" id="rgInput" placeholder="RG"><br>
+    <input type="text" id="rgInput" placeholder="RG / CPF"><br>
     <input type="text" id="vulgoInput" placeholder="Vulgo"><br>
     <input type="text" id="codigodeocorrenciaInput" placeholder="Tipo de Ocorrencia"><br>
     <input type="text" id="localInput" placeholder="Endereço do Fato"><br>
@@ -28,7 +28,7 @@
 
     <button onclick="gerarFicha()"> Gerar / Atualizar Ficha</button>
     <button onclick="baixarFicha()" id="btnBaixar">Baixar Ficha</button>
-    <button onclick="limparFormulario()">Limpar</button>
+    <button onclick="limparFormulario()">Limpar Tudo</button>
 
     <div id="loading">⏳ Gerando download...</div>
   </div>
@@ -47,7 +47,7 @@
       
       <div class="linha-dupla">
         <div id="naturalidade" class="campo">NATURAL DE:</div>
-        <div id="rg" class="campo">RG:</div>
+        <div id="rg" class="campo">RG / CPF:</div>
       </div>
       <div class="linha-dupla">
         <div id="codigodeocorrencia" class="campo">TIPO DE OCORRENCIA:</div>

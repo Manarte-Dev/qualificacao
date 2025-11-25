@@ -14,7 +14,7 @@ function gerarFicha() {
     {input: 'nomeInput', output: 'nome', prefix: 'NOME COMPLETO: '},
     {input: 'nascimentoInput', output: 'nascimento', prefix: 'DATA DE NASCIMENTO: '},
     {input: 'naturalidadeInput', output: 'naturalidade', prefix: 'NATURAL DE: '},
-    {input: 'rgInput', output: 'rg', prefix: 'RG: '},
+    {input: 'rgInput', output: 'rg', prefix: 'RG / CPF: '},
     {input: 'localInput', output: 'local', prefix: 'ENDEREÇO DOS FATOS: '},
     {input: 'enderecoInput', output: 'endereco', prefix: 'ENDEREÇO DO PRESO: '},
     {input: 'distritoInput', output: 'distrito', prefix: 'DISTRITO: '},
@@ -159,14 +159,14 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('Dispositivo iOS detectado - usando Share API');
   }
 
-  // Validação de foto
+  // Validação de foto / e tamanho do arquivo
   const fotoInput = document.getElementById('fotoInput');
   if (fotoInput) {
     fotoInput.addEventListener('change', e => {
       const file = e.target.files[0];
       if (file) {
-        if (file.size > 5 * 1024 * 1024) {
-          alert('Arquivo muito grande. Máximo 5MB.');
+        if (file.size > 10 * 1024 * 1024) {
+          alert('Arquivo muito grande. Máximo 10MB.');
           e.target.value = '';
           return;
         }
