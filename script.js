@@ -1,4 +1,4 @@
-/** --- MAPA DOS CAMPOS (reaproveitado em todo o código) --- */
+/* --- MAPA DOS CAMPOS  --- */
 const CAMPOS = [
   {input: 'nomeInput',           output: 'nome',           prefix: 'NOME COMPLETO: '},
   {input: 'nascimentoInput',     output: 'nascimento',     prefix: 'DATA DE NASCIMENTO: '},
