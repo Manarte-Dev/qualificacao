@@ -194,6 +194,7 @@ body {
   margin: 0;
 }
 
+
 #distrito, #equipe {
   font-size: 5px;
   width: 48%;
@@ -210,9 +211,12 @@ body {
   margin: 0;
 }
 
-#flagrante {
+#flagrante, #datafato {
   font-size: 5px;
-  margin-bottom: 0;
+  width: 48%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  padding-bottom: 2px;
+  margin: 0;
 }
 
 @media (max-width: 768px) {

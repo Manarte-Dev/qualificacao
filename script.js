@@ -12,6 +12,7 @@ const CAMPOS = [
   {input: 'bopcInput',           output: 'bopc',           prefix: 'BOPC Nº: '},
   {input: 'codigodeocorrenciaInput', output: 'codigodeocorrencia', prefix: 'TIPO DE OCORRENCIA: '},
   {input: 'vulgoInput',          output: 'vulgo',          prefix: 'VULGO: '},
+  {input: 'datafatoInput',          output: 'datafato',          prefix: 'DATA DO FATO: '},
   {input: 'flagranteInput',      output: 'flagrante',      prefix: 'FLAGRANTE / ABORDAGEM: '}
 ];
 
