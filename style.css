@@ -218,6 +218,37 @@ body {
   padding-bottom: 2px;
   margin: 0;
 }
+/* ===== Seletor de brasão (botões) ===== */
+.logos {
+  position: relative;
+  z-index: 4;              /* fica acima da foto/campos */
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.logos button {
+  padding: 6px 10px;
+  border: 1px solid #222;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.85);
+  color: #111;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.logos button:hover {
+  background: rgba(255,255,255,1);
+}
+
+.container .logos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
 
 @media (max-width: 768px) {
   .container {
@@ -262,3 +293,5 @@ body {
     box-shadow: none;
   }
 }
+
+
