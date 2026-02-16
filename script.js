@@ -12,6 +12,7 @@ const CAMPOS = [
   {input: 'bopcInput',           output: 'bopc',           prefix: 'BOPC Nº: '},
   {input: 'codigodeocorrenciaInput', output: 'codigodeocorrencia', prefix: 'TIPO DE OCORRENCIA: '},
   {input: 'vulgoInput',          output: 'vulgo',          prefix: 'VULGO: '},
+  {input: 'datafatoInput',          output: 'datafato',          prefix: 'DATA DO FATO: '},
   {input: 'flagranteInput',      output: 'flagrante',      prefix: 'FLAGRANTE / ABORDAGEM: '}
 ];
 
@@ -73,6 +74,33 @@ function ligarPreviewFoto() {
     reader.readAsDataURL(file);
   });
 }
+
+/* ============================
+   ✅ NOVO: Logo/Brasão
+   ============================ */
+
+/** --- Logo/Brasão: troca via botões --- */
+function ligarSelecaoLogo() {
+  const brasaoImg = document.getElementById('brasao');
+  const botoes = document.querySelectorAll('.logos button');
+
+  if (!brasaoImg || botoes.length === 0) return;
+
+  // define padrão (ou carrega do localStorage)
+  const salvo = localStorage.getItem('logoSelecionada');
+  brasaoImg.src = salvo || 'brasao-pmep.png';
+
+  botoes.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const nomeArquivo = btn.dataset.logo;
+      if (!nomeArquivo) return;
+
+      brasaoImg.src = nomeArquivo;              
+      localStorage.setItem('logoSelecionada', nomeArquivo);
+    });
+  });
+}
+
 
 /** --- Baixar/Compartilhar a ficha (sem alterações funcionais) --- */
 function baixarFicha() {
@@ -155,9 +183,14 @@ function getNomeArquivo() {
 
 /** --- Limpar tudo --- */
 function limparFormulario() {
-  if (!confirm('Tem certeza que deseja limpar todos os campos?')) return;
+  // Se quiser confirmação, deixe esta linha. Se atrapalhar, pode remover.
+  const ok = confirm('Tem certeza que deseja limpar todos os campos?');
+  if (!ok) return;
 
+  // limpa inputs de texto
   document.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
+
+  // limpa foto do input + preview
   const fotoInput = document.getElementById('fotoInput');
   const foto = document.getElementById('foto');
   if (fotoInput) fotoInput.value = '';
@@ -169,8 +202,14 @@ function limparFormulario() {
     if (elOut) elOut.textContent = prefix;
   });
 
+  // ✅ NOVO: reseta brasão e apaga escolha salva
+  const brasao = document.getElementById('brasao');
+  if (brasao) brasao.src = 'brasao-pmep.png';
+  localStorage.removeItem('logoSelecionada');
+
   console.log('Formulário limpo!');
 }
+
 
 /** --- Inicialização --- */
 document.addEventListener('DOMContentLoaded', () => {
@@ -187,4 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Liga preenchimento "ao vivo" dos campos
   ligarPreenchimentoAoVivo();
+
+  // ✅ NOVO: Liga seleção de logo/brazão
+  ligarSelecaoLogo();
 });

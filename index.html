@@ -16,15 +16,23 @@
     <input type="text" id="nascimentoInput" placeholder="Data de nascimento"><br>
     <input type="text" id="naturalidadeInput" placeholder="Naturalidade "><br>
     <input type="text" id="rgInput" placeholder="RG / CPF"><br>
-    <input type="text" id="vulgoInput" placeholder="Vulgo"><br>
-    <input type="text" id="codigodeocorrenciaInput" placeholder="Tipo de Ocorrencia"><br>
-    <input type="text" id="localInput" placeholder="Endereço do Fato"><br>
     <input type="text" id="enderecoInput" placeholder="Endereço do Preso"><br>
+    <input type="text" id="localInput" placeholder="Endereço do Fato"><br>
+    <input type="text" id="codigodeocorrenciaInput" placeholder="Tipo de Ocorrencia"><br>
+    <input type="text" id="vulgoInput" placeholder="Vulgo"><br>
     <input type="text" id="distritoInput" placeholder="Distrito Policial"><br>
     <input type="text" id="equipeInput" placeholder="Equipe"><br>
     <input type="text" id="bopmInput" placeholder="BOPM Nº"><br>
     <input type="text" id="bopcInput" placeholder="BOPC Nº"><br>
     <input type="text" id="flagranteInput" placeholder="Flagrante ou Abordagem"><br>
+    <input type="text" id="datafatoInput" placeholder="Data do Fato"><br>
+
+    <!-- ✅ MOVIDO PRA CÁ (junto dos botões existentes) -->
+    <div class="logos">
+      <button type="button" data-logo="brasao-pmep.png">PMESP</button>
+      <button type="button" data-logo="brasao-ft.png">FT</button>
+      <button type="button" data-logo="brasao-baep.png">BAEP</button>
+    </div>
 
     <button onclick="baixarFicha()" id="btnBaixar">Baixar Ficha</button>
     <button onclick="limparFormulario()">Limpar Tudo</button>
@@ -35,34 +43,41 @@
   <div class="ficha" id="ficha">
     <img id="foto" src="" alt="Foto do indivíduo">
     <h1 id="qpae">Ficha de Qualificação</h1>
-    <img src="brasao-pmep.png" class="brasao" alt="Brasão PMESP">
+
+    <!-- ✅ FICA SÓ A IMAGEM DO BRASÃO NA FICHA -->
+    <img id="brasao" class="brasao" alt="Logo selecionada">
 
     <div class="campo1">
       <div id="nome" class="campo">NOME COMPLETO:</div>
       <div id="nascimento" class="campo">DATA DE NASCIMENTO:</div>
 
-      <div id="local" class="campo">ENDEREÇO DOS FATOS:</div>
       <div id="endereco" class="campo">ENDEREÇO DO PRESO:</div>
-      
+      <div id="local" class="campo">ENDEREÇO DOS FATOS:</div>
+
       <div class="linha-dupla">
         <div id="naturalidade" class="campo">NATURAL DE:</div>
         <div id="rg" class="campo">RG / CPF:</div>
       </div>
+
       <div class="linha-dupla">
         <div id="codigodeocorrencia" class="campo">TIPO DE OCORRENCIA:</div>
         <div id="vulgo" class="campo">VULGO:</div>
       </div>
+
       <div class="linha-dupla">
         <div id="distrito" class="campo">DISTRITO:</div>
         <div id="equipe" class="campo">EQUIPE:</div>
       </div>
-      
+
       <div class="linha-dupla">
         <div id="bopm" class="campo">BOPM Nº:</div>
         <div id="bopc" class="campo">BOPC Nº:</div>
       </div>
-      
-      <div id="flagrante" class="campo">FLAGRANTE / ABORDAGEM:</div>
+
+      <div class="linha-dupla">
+        <div id="flagrante" class="campo">FLAGRANTE / ABORDAGEM:</div>
+        <div id="datafato" class="campo">DATA FATO:</div>
+      </div>
     </div>
   </div>
 
