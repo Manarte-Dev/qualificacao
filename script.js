@@ -40,6 +40,7 @@ function ligarPreenchimentoAoVivo() {
   });
 }
 
+
 /** --- Foto: pré-visualização imediata ao escolher arquivo --- */
 function ligarPreviewFoto() {
   const fotoInput = document.getElementById('fotoInput');
