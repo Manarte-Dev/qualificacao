@@ -239,7 +239,7 @@ body {
 }
 
 .logos button:hover {
-  background: rgba(255,255,255,1);
+  background: rgb(68, 175, 238);
 }
 
 .container .logos {
