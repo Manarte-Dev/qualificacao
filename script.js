@@ -88,7 +88,7 @@ function ligarSelecaoLogo() {
 
   // define padrão (ou carrega do localStorage)
   const salvo = localStorage.getItem('logoSelecionada');
-  brasaoImg.src = salvo || 'brasao-pmesp.png';
+  brasaoImg.src = salvo || 'imagens/brasao-pmesp.png';
 
   botoes.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -204,7 +204,7 @@ function limparFormulario() {
 
   // ✅ NOVO: reseta brasão e apaga escolha salva
   const brasao = document.getElementById('brasao');
-  if (brasao) brasao.src = 'brasao-pmesp.png';
+  if (brasao) brasao.src = 'imagens/brasao-pmesp.png';
   localStorage.removeItem('logoSelecionada');
 
   console.log('Formulário limpo!');
