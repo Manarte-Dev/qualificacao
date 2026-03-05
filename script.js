@@ -1,4 +1,7 @@
 /* --- MAPA DOS CAMPOS  --- */
+
+
+
 const CAMPOS = [
   {input: 'nomeInput',           output: 'nome',           prefix: 'NOME COMPLETO: '},
   {input: 'nascimentoInput',     output: 'nascimento',     prefix: 'DATA DE NASCIMENTO: '},
@@ -34,12 +37,17 @@ function ligarPreenchimentoAoVivo() {
     // Estado inicial (útil ao recarregar a página com dados)
     atualizarSaidaDoCampo(cfg);
 
+
+
+
+
     // Reagir a digitação/alteração/saída de foco
     elIn.addEventListener('input', () => atualizarSaidaDoCampo(cfg));
     elIn.addEventListener('change', () => atualizarSaidaDoCampo(cfg));
     elIn.addEventListener('blur', () => atualizarSaidaDoCampo(cfg));
   });
 }
+
 
 
 /** --- Foto: pré-visualização imediata ao escolher arquivo --- */
@@ -79,6 +87,7 @@ function ligarPreviewFoto() {
    ✅ NOVO: Logo/Brasão
    ============================ */
 
+
 /** --- Logo/Brasão: troca via botões --- */
 function ligarSelecaoLogo() {
   const brasaoImg = document.getElementById('brasao');
@@ -95,11 +104,13 @@ function ligarSelecaoLogo() {
       const nomeArquivo = btn.dataset.logo;
       if (!nomeArquivo) return;
 
+
       brasaoImg.src = nomeArquivo;              
       localStorage.setItem('logoSelecionada', nomeArquivo);
     });
   });
 }
+
 
 
 /** --- Baixar/Compartilhar a ficha (sem alterações funcionais) --- */
@@ -112,6 +123,8 @@ function baixarFicha() {
   loading.style.display = 'block';
   btnBaixar.disabled = true;
 
+
+
   const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
   btnBaixar.textContent = isIOS ? 'Gerando...' : 'Gerando...';
 
@@ -119,11 +132,14 @@ function baixarFicha() {
     const opcoes = { useCORS: true, backgroundColor: '#ffffff', scale: 3 };
     console.log('Configurações html2canvas:', opcoes);
 
+
     html2canvas(ficha, opcoes)
       .then(canvas => {
         console.log('Canvas gerado:', canvas.width + 'x' + canvas.height);
         canvas.toBlob(blob => {
           const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+
 
           if (isIOS && navigator.share) {
             console.log('Usando Share API para iOS');
@@ -187,6 +203,7 @@ function limparFormulario() {
   const ok = confirm('Tem certeza que deseja limpar todos os campos?');
   if (!ok) return;
 
+
   // limpa inputs de texto
   document.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
 
@@ -195,6 +212,8 @@ function limparFormulario() {
   const foto = document.getElementById('foto');
   if (fotoInput) fotoInput.value = '';
   if (foto) foto.src = '';
+
+
 
   // restaura cada saída para apenas o prefixo
   CAMPOS.forEach(({output, prefix}) => {
@@ -209,6 +228,7 @@ function limparFormulario() {
 
   console.log('Formulário limpo!');
 }
+
 
 
 /** --- Inicialização --- */
