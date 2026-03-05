@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E45Z455WEE"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-E45Z455WEE');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ficha de Qualificação</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  
 </head>
+
 <body>
   <div class="container">
     <h2>Ficha de Qualificação</h2>
+
     <label for="fotoInput" class="botaoFotoLabel">📷 Toque para carregar foto</label>
-    <input type="file" id="fotoInput" accept="image/*" style="display: none;"><br>
+    <input type="file" id="fotoInput" accept="image/*" style="display:none;"><br>
+
     <input type="text" id="nomeInput" placeholder="Nome completo"><br>
     <input type="text" id="nascimentoInput" placeholder="Data de nascimento"><br>
-    <input type="text" id="naturalidadeInput" placeholder="Naturalidade "><br>
+    <input type="text" id="naturalidadeInput" placeholder="Naturalidade"><br>
     <input type="text" id="rgInput" placeholder="RG / CPF"><br>
     <input type="text" id="enderecoInput" placeholder="Endereço do Preso"><br>
     <input type="text" id="localInput" placeholder="Endereço do Fato"><br>
-    <input type="text" id="codigodeocorrenciaInput" placeholder="Tipo de Ocorrencia"><br>
+    <input type="text" id="codigodeocorrenciaInput" placeholder="Tipo de Ocorrência"><br>
     <input type="text" id="vulgoInput" placeholder="Vulgo"><br>
     <input type="text" id="distritoInput" placeholder="Distrito Policial"><br>
     <input type="text" id="equipeInput" placeholder="Equipe"><br>
@@ -38,7 +30,6 @@
     <input type="text" id="flagranteInput" placeholder="Flagrante ou Abordagem"><br>
     <input type="text" id="datafatoInput" placeholder="Data do Fato"><br>
 
-    <!-- ✅ MOVIDO PRA CÁ (junto dos botões existentes) -->
     <div class="logos">
       <button type="button" data-logo="imagens/brasao-pmesp.png">PMESP</button>
       <button type="button" data-logo="imagens/brasao-ft.png">FT</button>
@@ -46,17 +37,16 @@
       <button type="button" data-logo="imagens/brasao-rocam.png">ROCAM</button>
     </div>
 
-    <button onclick="baixarFicha()" id="btnBaixar">Baixar Ficha</button>
-    <button onclick="limparFormulario()">Limpar Tudo</button>
+    <button type="button" onclick="baixarFicha()" id="btnBaixar">Baixar Ficha</button>
+    <button type="button" onclick="limparFormulario()">Limpar Tudo</button>
 
-    <div id="loading">⏳ Gerando download...</div>
+    <div id="loading" style="display:none;">⏳ Gerando download...</div>
   </div>
 
   <div class="ficha" id="ficha">
     <img id="foto" src="" alt="Foto do indivíduo">
     <h1 id="qpae">Ficha de Qualificação</h1>
 
-    <!-- ✅ FICA SÓ A IMAGEM DO BRASÃO NA FICHA -->
     <img id="brasao" class="brasao" alt="Logo selecionada">
 
     <div class="campo1">
@@ -72,7 +62,7 @@
       </div>
 
       <div class="linha-dupla">
-        <div id="codigodeocorrencia" class="campo">TIPO DE OCORRENCIA:</div>
+        <div id="codigodeocorrencia" class="campo">TIPO DE OCORRÊNCIA:</div>
         <div id="vulgo" class="campo">VULGO:</div>
       </div>
 
@@ -93,6 +83,20 @@
     </div>
   </div>
 
+  <!-- ✅ exportArea TEM que ficar dentro do body -->
+  <div id="exportArea" style="
+    position: fixed;
+    left: -10000px;
+    top: 0;
+    width: 900px;
+    background: #fff;
+    z-index: -1;">
+  </div>
+
+  <!-- ✅ html2canvas UMA vez -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+  <!-- ✅ seu JS UMA vez -->
   <script src="script.js"></script>
 </body>
 </html>
